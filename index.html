@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Stock Sentiment Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📈 Real-Time Stock Sentiment Analyzer</h1>
+            <p>Analyze market sentiment and get trading signals based on real-time news data</p>
+        </header>
+
+        <section class="search-section">
+            <form class="search-form" id="searchForm">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="tickerInput" 
+                    placeholder="Enter stock ticker (e.g., AAPL, TSLA, MSFT)"
+                    required
+                >
+                <button type="submit" class="analyze-btn" id="analyzeBtn">
+                    Analyze Sentiment
+                </button>
+            </form>
+        </section>
+
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Analyzing sentiment data...</p>
+        </div>
+
+        <section class="results" id="results">
+            <div class="results-grid">
+                <div class="card">
+                    <h2 class="card-title">Sentiment Trend Signal</h2>
+                    <div class="sentiment-signal" id="sentimentSignal">
+                        <div class="signal-indicator" id="signalIndicator">ANALYZING...</div>
+                        <div class="signal-description" id="signalDescription">Processing market sentiment...</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidenceFill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">📰 News Sentiment</h2>
+                    <div id="newsContainer">
+                        <p style="color: #a0aec0; text-align: center; padding: 20px;">
+                            Enter a stock ticker to see recent news sentiment analysis
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card chart-placeholder">
+                    <h2 class="card-title">Sentiment Trend Chart</h2>
+                    <div class="chart-area">
+                        <canvas id="sentimentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body> 
+</html>
